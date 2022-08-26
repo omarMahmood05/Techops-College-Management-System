@@ -13,3 +13,6 @@ def techops_signup(request):
 
 def techops_dashboard(request):
     return render(request, 'dashboard.html')
+
+def techops_results(request):
+    return render(request, 'techops_results.html')
