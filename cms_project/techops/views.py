@@ -16,3 +16,9 @@ def techops_dashboard(request):
 
 def techops_results(request):
     return render(request, 'techops_results.html')
+
+def techops_feesPayment(request):
+    return render(request, 'techops_feesPayment.html')
+
+def techops_admit_card(request):
+    return render(request, 'techops_admit_card.html')
