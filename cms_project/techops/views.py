@@ -16,9 +16,12 @@ def student_login(request):
         if student.objects.filter(student_email=student_email,student_password=student_password).exists():
             return render(request, 'dashboard.html')
         else:
-            return render(request,'homepage.html')
+            return render(request,'techops_login_page_failed.html')
     except:
-         return render(request,'homepage.html')
+         return render(request,'techops_login_page_failed.html')
+
+def techops_login_page_failed(request):
+    return render(request, 'techops_login_page_failed.html')
 
 
 def techops_signup(request):
