@@ -115,3 +115,9 @@ def add_faculty_submit(request):
         return render(request, 'admin_list_faculty.html')
     except Exception as e:
         return HttpResponse(e)
+
+
+def faculty_member_delete(request,id):
+    f = faculty.objects.get(id=id)
+    f.delete()
+    return redirect('../admin_list_faculty')

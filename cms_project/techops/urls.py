@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin_manage_faculty', views.admin_manage_faculty),
     path('admin_list_faculty', views.admin_list_faculty),
     path('add_faculty_submit', views.add_faculty_submit),
+    path('faculty_member_delete/<int:id>', views.faculty_member_delete),
     # Testing
 
 ]
