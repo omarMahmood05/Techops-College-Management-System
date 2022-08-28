@@ -268,6 +268,7 @@
                                     <hr class="my-0" />
                                     <div class="card-body">
                                         <form id="formAccountSettings" method="POST" action="add_student_submit">
+                                            {%csrf_token%}
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label for="firstName" class="form-label">Student Name</label>

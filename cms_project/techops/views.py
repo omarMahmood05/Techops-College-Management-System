@@ -36,3 +36,17 @@ def techops_profile(request):
 def faculty_add_student(request):
     return render(request, 'faculty_add_student.html')
 
+def add_student_submit(request):
+    x = student()
+    try:
+        x.student_name=request.POST.get('student_name')
+        x.student_fathername=request.POST.get('father_name')
+        x.student_mothername=request.POST.get('mother_name')
+        x.student_email=request.POST.get('student_email')
+        x.student_phoneno=request.POST.get('student_phno')
+        x.student_dob=request.POST.get('student_dob')
+        x.student_password=request.POST.get('student_password')
+        x.save()
+        return render(request,'dashboard.html')
+    except Exception as e:
+        return HttpResponse(e)
