@@ -31,3 +31,6 @@ def techops_backlogs(request):
 
 def techops_profile(request):
     return render(request, 'techops_profile.html')
+
+def faculty_add_student(request):
+    return render(request, 'faculty_add_student.html')
