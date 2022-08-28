@@ -9,6 +9,12 @@ def homepage(request):
 def techops_login(request):
     return render(request, 'techops_login_page.html')
 
+def techops_forgot_password(request):
+    return render(request, 'techops_forgot_password.html')
+
+def reset_password(request):
+    return render(request, 'reset_password.html')
+
 def student_login(request):
     student_email=request.POST.get('student_email')
     student_password=request.POST.get('student_password')

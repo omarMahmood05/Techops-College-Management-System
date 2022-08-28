@@ -6,6 +6,8 @@ urlpatterns = [
     # Student URLs
     path('techops_login_page', views.techops_login),
     path('techops_login_page_failed', views.techops_login_page_failed),
+    path('techops_forgot_password', views.techops_forgot_password),
+    path('reset_password', views.reset_password),
     path('student_login', views.student_login),
     path('techops_signup_page', views.techops_signup),
     path('techops_dashboard', views.techops_dashboard),
