@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.homepage),
     # Student URLs
     path('techops_login_page', views.techops_login),
+    path('student_login', views.student_login),
     path('techops_signup_page', views.techops_signup),
     path('techops_dashboard', views.techops_dashboard),
     path('techops_results', views.techops_results),

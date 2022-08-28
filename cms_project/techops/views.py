@@ -9,6 +9,18 @@ def homepage(request):
 def techops_login(request):
     return render(request, 'techops_login_page.html')
 
+def student_login(request):
+    student_email=request.POST.get('student_email')
+    student_password=request.POST.get('student_password')
+    try:
+        if student.objects.filter(student_email=student_email,student_password=student_password).exists():
+            return render(request, 'dashboard.html')
+        else:
+            return render(request,'homepage.html')
+    except:
+         return render(request,'homepage.html')
+
+
 def techops_signup(request):
     return render(request, 'techops_signup_page.html')
 
