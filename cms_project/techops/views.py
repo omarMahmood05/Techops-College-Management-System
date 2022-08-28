@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from techops.models import *
 # Create your views here.
@@ -98,7 +98,9 @@ def admin_manage_faculty(request):
     return render(request, 'admin_manage_faculty.html')
 
 def admin_list_faculty(request):
-    return render(request, 'admin_list_faculty.html')
+    f = faculty.objects.all()
+    context = {'facultyMembers': f}
+    return render(request, 'admin_list_faculty.html', context)
 
 
 
@@ -110,6 +112,6 @@ def add_faculty_submit(request):
         y.faculty_status=request.POST.get('faculty_status')
         y.faculty_password=request.POST.get('faculty_password')
         y.save()
-        return render(request,'admin_list_faculty')
+        return render(request, 'admin_list_faculty.html')
     except Exception as e:
         return HttpResponse(e)
