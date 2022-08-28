@@ -20,6 +20,11 @@ urlpatterns = [
     path('faculty_login_page', views.faculty_login_page),
     path('faculty_add_student', views.faculty_add_student),
     path('add_student_submit', views.add_student_submit),
+    path('admin_login_page', views.admin_login_page),
+    path('admin_login', views.admin_login),
+    path('admin_add_faculty', views.admin_add_faculty),
+    path('admin_manage_faculty', views.admin_manage_faculty),
+    path('admin_list_faculty', views.admin_list_faculty),
     # Testing
 
 ]

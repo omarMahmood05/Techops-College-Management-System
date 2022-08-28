@@ -71,3 +71,31 @@ def add_student_submit(request):
         return render(request,'dashboard.html')
     except Exception as e:
         return HttpResponse(e)
+
+def admin_login_page(request):
+    return render(request, 'admin_login_page.html')
+
+def admin_login(request):
+    admin_email_c = "fahadomar@fahadomar.com"
+    admin_pass_c = "fahadomar@fahadomar.com"
+    admin_email = request.POST.get('admin_email')
+    admin_pass = request.POST.get('admin_password')
+    try:
+        if admin_email_c == admin_email:
+            if admin_pass_c == admin_pass:
+                return render(request, 'admin_dashboard.html')
+            else:
+                return render(request, 'homepage.html')
+        else:
+            return render(request, 'homepage.html')
+    except:
+        return render(request, 'homepage.html')
+
+def admin_add_faculty(request):
+    return render(request, 'admin_add_faculty.html')
+
+def admin_manage_faculty(request):
+    return render(request, 'admin_manage_faculty.html')
+
+def admin_list_faculty(request):
+    return render(request, 'admin_list_faculty.html')
