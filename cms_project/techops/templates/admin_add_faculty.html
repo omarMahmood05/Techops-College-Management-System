@@ -271,15 +271,15 @@
                                             {%csrf_token%}
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="firstName" class="form-label"> Name</label>
+                                                    <label for="firstName" class="form-label">Name</label>
                                                     <input class="form-control" type="text" id="student_name"
-                                                        name="student_name" placeholder="Student Full Name" value=""
+                                                        name="student_name" placeholder="Faculty Full Name" value=""
                                                         autofocus />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="lastName" class="form-label">Father's Name</label>
+                                                    <label for="lastName" class="form-label">Status</label>
                                                     <input class="form-control" type="text" name="father_name"
-                                                        id="father_name" placeholder="Father's Name" value="" />
+                                                        id="father_name" placeholder="Faculty Status's Name" value="" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="email" class="form-label">E-mail</label>
@@ -287,38 +287,18 @@
                                                         name="student_email" placeholder="john.doe@example.com" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="organization" class="form-label">Mother's Name</label>
-                                                    <input type="text" class="form-control" id="mother_name"
-                                                        name="mother_name" placeholder="Mother's Name" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="form-label" for="phoneNumber">Phone Number</label>
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text">+91</span>
-                                                        <input type="text" id="student_phno" name="student_phno"
-                                                            class="form-control" placeholder="9338272873" />
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
                                                     <label for="address" class="form-label">Password</label>
                                                     <input type="text" class="form-control" id="student_password"
                                                         name="student_password" placeholder="password" />
                                                 </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="address" class="form-label">Date of Birth</label>
-                                                    <div class="col-md-10">
-                                                        <input class="form-control" name="student_dob" type="date"
-                                                            value="2021-06-18" id="html5-date-input student_dob" />
-                                                    </div>
 
 
-                                                </div>
-                                                <div class="mt-2">
-                                                    <button type="submit" class="btn btn-primary me-2">Save
-                                                        changes</button>
-                                                    <button type="reset"
-                                                        class="btn btn-outline-secondary">Cancel</button>
-                                                </div>
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-primary me-2">Save
+                                                    changes</button>
+                                                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                                            </div>
                                         </form>
                                     </div>
                                     <!-- /Account -->

@@ -10,3 +10,9 @@ class student(models.Model):
     student_dob=models.DateField(max_length=50)
     student_password=models.CharField(max_length=50)
     student_picture=models.CharField(max_length=255)
+
+class faculty(models.Model):
+    faculty_name=models.CharField(max_length=50)
+    faculty_email=models.EmailField(max_length=50)
+    faculty_status=models.CharField(max_length=50)
+    faculty_password=models.CharField(max_length=50)
