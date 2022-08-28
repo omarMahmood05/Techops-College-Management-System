@@ -267,47 +267,47 @@
                                     </div>
                                     <hr class="my-0" />
                                     <div class="card-body">
-                                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                                        <form id="formAccountSettings" method="POST" action="add_student_submit">
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label for="firstName" class="form-label">Student Name</label>
-                                                    <input class="form-control" type="text" id="firstName"
-                                                        name="firstName" placeholder="Student Full Name" value=""
+                                                    <input class="form-control" type="text" id="student_name"
+                                                        name="student_name" placeholder="Student Full Name" value=""
                                                         autofocus />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="lastName" class="form-label">Father's Name</label>
-                                                    <input class="form-control" type="text" name="lastName"
-                                                        id="lastName" placeholder="Father's Name" value="" />
+                                                    <input class="form-control" type="text" name="father_name"
+                                                        id="father_name" placeholder="Father's Name" value="" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="email" class="form-label">E-mail</label>
-                                                    <input class="form-control" type="text" id="email" name="email"
+                                                    <input class="form-control" type="text" id="student_email" name="student_email"
                                                         placeholder="john.doe@example.com" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="organization" class="form-label">Mother's Name</label>
-                                                    <input type="text" class="form-control" id="organization"
-                                                        name="organization" placeholder="Mother's Name" />
+                                                    <input type="text" class="form-control" id="mother_name"
+                                                        name="mother_name" placeholder="Mother's Name" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label" for="phoneNumber">Phone Number</label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text">+91</span>
-                                                        <input type="text" id="phoneNumber" name="phoneNumber"
-                                                            class="form-control" placeholder="858 381 7786" />
+                                                        <input type="text" id="student_phno" name="student_phno"
+                                                            class="form-control" placeholder="9338272873" />
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="address" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="address"
-                                                        name="address" placeholder="password" />
+                                                    <input type="text" class="form-control" id="student_password"
+                                                        name="student_password" placeholder="password" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="address" class="form-label">Date of Birth</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="date" value="2021-06-18"
-                                                            id="html5-date-input" />
+                                                        <input class="form-control" name="student_dob" type="date" value="2021-06-18"
+                                                            id="html5-date-input student_dob" />
                                                     </div>
 
 

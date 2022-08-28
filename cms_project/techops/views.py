@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from techops.models import *
 # Create your views here.
 
 def homepage(request):
@@ -34,3 +35,4 @@ def techops_profile(request):
 
 def faculty_add_student(request):
     return render(request, 'faculty_add_student.html')
+

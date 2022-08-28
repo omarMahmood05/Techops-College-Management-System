@@ -15,6 +15,7 @@ urlpatterns = [
     # Faculty URLs
     path('faculty_login_page', views.faculty_login_page),
     path('faculty_add_student', views.faculty_add_student),
+    path('add_student_submit', views.add_student_submit),
     # Testing
 
 ]
