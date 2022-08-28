@@ -22,3 +22,12 @@ def techops_feesPayment(request):
 
 def techops_admit_card(request):
     return render(request, 'techops_admit_card.html')
+
+def faculty_login_page(request):
+    return render(request, 'faculty_login_page.html')
+
+def techops_backlogs(request):
+    return render(request, 'techops_backlogs.html')
+
+def techops_profile(request):
+    return render(request, 'techops_profile.html')
