@@ -267,29 +267,29 @@
                                     </div>
                                     <hr class="my-0" />
                                     <div class="card-body">
-                                        <form id="formAccountSettings" method="POST" action="add_student_submit">
+                                        <form id="formAccountSettings" method="POST" action="add_faculty_submit">
                                             {%csrf_token%}
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label for="firstName" class="form-label">Name</label>
-                                                    <input class="form-control" type="text" id="student_name"
-                                                        name="student_name" placeholder="Faculty Full Name" value=""
+                                                    <input class="form-control" type="text" id="faculty_name"
+                                                        name="faculty_name" placeholder="Faculty Full Name" value=""
                                                         autofocus />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="lastName" class="form-label">Status</label>
-                                                    <input class="form-control" type="text" name="father_name"
-                                                        id="father_name" placeholder="Faculty Status's Name" value="" />
+                                                    <input class="form-control" type="text" name="faculty_status"
+                                                        id="faculty_status" placeholder="Faculty Status" value="" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="email" class="form-label">E-mail</label>
-                                                    <input class="form-control" type="text" id="student_email"
-                                                        name="student_email" placeholder="john.doe@example.com" />
+                                                    <input class="form-control" type="text" id="faculty_email"
+                                                        name="faculty_email" placeholder="john.doe@example.com" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="address" class="form-label">Password</label>
-                                                    <input type="text" class="form-control" id="student_password"
-                                                        name="student_password" placeholder="password" />
+                                                    <input type="text" class="form-control" id="faculty_password"
+                                                        name="faculty_password" placeholder="password" />
                                                 </div>
 
 

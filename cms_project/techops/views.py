@@ -99,3 +99,17 @@ def admin_manage_faculty(request):
 
 def admin_list_faculty(request):
     return render(request, 'admin_list_faculty.html')
+
+
+
+def add_faculty_submit(request):
+    y=faculty()
+    try:
+        y.faculty_name=request.POST.get('faculty_name')
+        y.faculty_email=request.POST.get('faculty_email')
+        y.faculty_status=request.POST.get('faculty_status')
+        y.faculty_password=request.POST.get('faculty_password')
+        y.save()
+        return render(request,'admin_list_faculty')
+    except Exception as e:
+        return HttpResponse(e)

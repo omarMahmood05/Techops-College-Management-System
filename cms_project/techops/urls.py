@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin_add_faculty', views.admin_add_faculty),
     path('admin_manage_faculty', views.admin_manage_faculty),
     path('admin_list_faculty', views.admin_list_faculty),
+    path('add_faculty_submit', views.add_faculty_submit),
     # Testing
 
 ]
