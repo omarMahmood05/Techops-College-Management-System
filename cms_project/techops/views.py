@@ -180,8 +180,8 @@ def faculty_login(request):
         if faculty.objects.filter(faculty_email=faculty_email,faculty_password=faculty_password).exists():
             global faculty_authenticated
             faculty_authenticated = True
-            return render(request, 'dashboard.html')
+            return render(request, 'faculty_dashboard.html')
         else:
-            return render(request,'techops_login_page_failed.html')
+            return render(request,'faculty_login_page_error.html')
     except:
-         return render(request,'techops_login_page_failed.html')
+         return render(request,'faculty_login_page_error.html')
