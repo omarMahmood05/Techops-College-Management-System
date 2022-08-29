@@ -1,6 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
+
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
     data-template="vertical-menu-template-free">
 
@@ -9,7 +10,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Fluid - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Fees</title>
 
     <meta name="description" content="" />
 
@@ -84,17 +85,17 @@
                     <li class="menu-item active open">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-layout"></i>
-                            <div data-i18n="Layouts">Students Corner</div>
+                            <div data-i18n="Layouts">Faculty Corner</div>
                         </a>
 
                         <ul class="menu-sub">
 
-                            <li class="menu-item active">
+                            <li class="menu-item ">
                                 <a href="techops_results" class="menu-link">
-                                    <div data-i18n="Fluid">Current Faculty Members</div>
+                                    <div data-i18n="Fluid">Results</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="techops_feesPayment" class="menu-link">
                                     <div data-i18n="Blank">Fees Payment</div>
                                 </a>
@@ -106,7 +107,6 @@
                             </li>
                         </ul>
                     </li>
-
 
                 </ul>
             </aside>
@@ -145,7 +145,7 @@
                     data-size="large"
                     data-show-count="true"
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Stadfsfr</a
+                    >Star</a
                   >
                 </li> -->
 
@@ -222,89 +222,95 @@
                 <div class="content-wrapper">
                     <!-- Content -->
 
-                    <div class="container-fluid flex-grow-1 container-p-y">
-                        <!-- Layout Demo -->
-                        <div class="card">
-                            <h3 class="card-header">Current Faculty Members</h3>
-                            <div class="table-responsive text-nowrap ">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-border-bottom-0">
-                                        {% for i in facultyMembers %}
-                                        <tr>
-                                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                                                <strong>{{i.faculty_name}}</strong>
-                                            </td>
-                                            <td>{{i.faculty_email}}</td>
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <!-- <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Account</h4> -->
 
-                                            <td><span class="badge bg-label-primary me-1">{{i.faculty_status}}</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                        data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="admin_faculty_edit/{{i.id}}"><i
-                                                                class="bx bx-edit-alt me-1"></i>
-                                                            Edit</a>
-                                                        <a class="dropdown-item"
-                                                            href="faculty_member_delete/{{i.id}}"><i
-                                                                class="bx bx-trash me-1"></i>
-                                                            Delete</a>
-                                                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="nav nav-pills flex-column flex-md-row mb-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active"><i class=" bx bx-user me-1"></i>
+                                            Account</a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="pages-account-settings-notifications.html"><i
+                                                class="bx bx-bell me-1"></i> Notifications</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages-account-settings-connections.html"><i
+                                                class="bx bx-link-alt me-1"></i> Connections</a>
+                                    </li> -->
+                                </ul>
+                                <div class="card mb-4">
+                                    <h5 class="card-header">Edit Profile</h5>
+                                    <!-- Account -->
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                            <img src="{% static 'assets/img/avatars/1.png' %}" alt="user-avatar"
+                                                class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                                            <div class="button-wrapper">
+                                                <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                                    <span class="d-none d-sm-block">Upload new photo</span>
+                                                    <i class="bx bx-upload d-block d-sm-none"></i>
+                                                    <input type="file" id="upload" class="account-file-input" hidden
+                                                        accept="image/png, image/jpeg" />
+                                                </label>
+                                                <button type="button"
+                                                    class="btn btn-outline-secondary account-image-reset mb-4">
+                                                    <i class="bx bx-reset d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Reset</span>
+                                                </button>
+
+                                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="my-0" />
+                                    <div class="card-body">
+                                        <form id="formAccountSettings" method="POST" action="add_faculty_submit">
+                                            {%csrf_token%}
+                                            <div class="row">
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="firstName" class="form-label">Name</label>
+                                                    <input class="form-control" type="text" id="faculty_name"
+                                                        name="faculty_name" placeholder="Faculty Full Name" disabled
+                                                        value="{{member.faculty_name}}" autofocus />
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="lastName" class="form-label">Status</label>
+                                                    <input class="form-control" type="text" name="faculty_status"
+                                                        id="faculty_status" placeholder="Faculty Status" value="" />
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="email" class="form-label">E-mail</label>
+                                                    <input class="form-control" type="text" id="faculty_email"
+                                                        name="faculty_email" placeholder="john.doe@example.com"
+                                                        value="{{member.faculty_email}}" disabled />
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="address" class="form-label">Password</label>
+                                                    <input type="text" class="form-control" id="faculty_password"
+                                                        name="faculty_password" placeholder="password" />
+                                                </div>
+
+
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-primary me-2">Save
+                                                    changes</button>
+                                                <button type="reset" href="admin_list_faculty"
+                                                    class="btn btn-outline-secondary">Clear</button> 
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /Account -->
+                                </div>
                             </div>
                         </div>
-
-                        <!--/ Layout Demo -->
                     </div>
                     <!-- / Content -->
 
                     <!-- Footer -->
-                    <!-- <footer class="content-footer footer bg-footer-theme">
-              <div class="container-fluid d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer> -->
                     <!-- / Footer -->
 
                     <div class="content-backdrop fade"></div>
@@ -318,8 +324,8 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-    <!-- 
-    <div class="buy-now">
+
+    <!-- <div class="buy-now">
       <a
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
         target="_blank"

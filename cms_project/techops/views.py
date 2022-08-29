@@ -3,7 +3,12 @@ from django.http import HttpResponse
 from techops.models import *
 # Create your views here.
 
+student_authenticated = False
+faculty_authenticated = False
+admin_authenticated = False
+
 def homepage(request):
+    student_authenticated = False
     return render(request, 'homepage.html')
 
 def techops_login(request):
@@ -15,11 +20,21 @@ def techops_forgot_password(request):
 def reset_password(request):
     return render(request, 'reset_password.html')
 
+def authentication_error(request):
+    return render(request, 'authentication_error.html')
+
+def student_log_out(request):
+    global student_authenticated
+    student_authenticated = False
+    return render(request, 'techops_login_page.html')
+
 def student_login(request):
     student_email=request.POST.get('student_email')
     student_password=request.POST.get('student_password')
     try:
         if student.objects.filter(student_email=student_email,student_password=student_password).exists():
+            global student_authenticated
+            student_authenticated = True
             return render(request, 'dashboard.html')
         else:
             return render(request,'techops_login_page_failed.html')
@@ -34,7 +49,11 @@ def techops_signup(request):
     return render(request, 'techops_signup_page.html')
 
 def techops_dashboard(request):
-    return render(request, 'dashboard.html')
+    if student_authenticated:
+        return render(request, 'dashboard.html')
+    else: 
+        return render(request, 'authentication_error.html')
+        
 
 def techops_results(request):
     return render(request, 'techops_results.html')
@@ -103,7 +122,6 @@ def admin_list_faculty(request):
     return render(request, 'admin_list_faculty.html', context)
 
 
-
 def add_faculty_submit(request):
     y=faculty()
     try:
@@ -112,7 +130,8 @@ def add_faculty_submit(request):
         y.faculty_status=request.POST.get('faculty_status')
         y.faculty_password=request.POST.get('faculty_password')
         y.save()
-        return render(request, 'admin_list_faculty.html')
+        return redirect('./admin_list_faculty')
+        # return render(request, 'admin_list_faculty.html')
     except Exception as e:
         return HttpResponse(e)
 
@@ -121,3 +140,8 @@ def faculty_member_delete(request,id):
     f = faculty.objects.get(id=id)
     f.delete()
     return redirect('../admin_list_faculty')
+
+def admin_faculty_edit(request, id):
+    f = faculty.objects.get(id = id)
+    context = {'member': f}
+    return render(request, 'admin_faculty_edit.html', context)

@@ -6,6 +6,8 @@ urlpatterns = [
     # Student URLs
     path('techops_login_page', views.techops_login),
     path('techops_login_page_failed', views.techops_login_page_failed),
+    path('student_log_out', views.student_log_out),
+    path('authentication_error', views.authentication_error),
     path('techops_forgot_password', views.techops_forgot_password),
     path('reset_password', views.reset_password),
     path('student_login', views.student_login),
@@ -20,6 +22,7 @@ urlpatterns = [
     path('faculty_login_page', views.faculty_login_page),
     path('faculty_add_student', views.faculty_add_student),
     path('add_student_submit', views.add_student_submit),
+    # Admin Pages
     path('admin_login_page', views.admin_login_page),
     path('admin_login', views.admin_login),
     path('admin_add_faculty', views.admin_add_faculty),
@@ -27,6 +30,7 @@ urlpatterns = [
     path('admin_list_faculty', views.admin_list_faculty),
     path('add_faculty_submit', views.add_faculty_submit),
     path('faculty_member_delete/<int:id>', views.faculty_member_delete),
+    path('admin_faculty_edit/<int:id>', views.admin_faculty_edit),
     # Testing
 
 ]
