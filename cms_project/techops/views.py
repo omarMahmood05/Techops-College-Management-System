@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from techops.models import *
+from techops.forms import *
 # Create your views here.
 
 student_authenticated = False
@@ -161,3 +162,12 @@ def admin_faculty_edit(request, id):
     f = faculty.objects.get(id = id)
     context = {'member': f}
     return render(request, 'admin_faculty_edit.html', context)
+
+def faculty_edited(request,id):
+        f = faculty.objects.get(id=id)
+        form=edited_form(request.POST, instance=f)
+        if form._is_valid():
+            form.save()
+            return redirect('../admin_list_faculty')
+        context = {'member': f}
+        return render(request, 'admin_faculty_edit.html', context)
