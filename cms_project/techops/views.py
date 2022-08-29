@@ -196,3 +196,10 @@ def faculty_list_student(request):
     stu = student.objects.all()
     context = {'students': stu}
     return render(request, 'faculty_list_student.html', context)
+
+
+def faculty_student_delete(request,id):
+    f = faculty.objects.get(id=id)
+    f.delete()
+    return redirect('../faculty_list_student')
+    
