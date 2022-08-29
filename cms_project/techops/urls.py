@@ -24,6 +24,7 @@ urlpatterns = [
     path('faculty_login', views.faculty_login),
     path('faculty_add_student', views.faculty_add_student),
     path('add_student_submit', views.add_student_submit),
+    path('faculty_dashboard', views.add_student_submit),
     # Admin Pages
     path('admin_login_page', views.admin_login_page),
     path('admin_login', views.admin_login),

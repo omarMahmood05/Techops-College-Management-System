@@ -185,3 +185,9 @@ def faculty_login(request):
             return render(request,'faculty_login_page_error.html')
     except:
          return render(request,'faculty_login_page_error.html')
+
+
+
+def faculty_dashboard(request):
+
+    return render(request,'faculty_dashboard.html')
