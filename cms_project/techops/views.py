@@ -171,4 +171,4 @@ def faculty_edited(request,id):
                 f_form.save()
                 return redirect('../admin_list_faculty')
         except Exception as e:
-            return HttpResponse("Some error")   
+            return HttpResponse(e)   
