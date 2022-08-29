@@ -185,3 +185,14 @@ def faculty_login(request):
             return render(request,'faculty_login_page_error.html')
     except:
          return render(request,'faculty_login_page_error.html')
+
+def faculty_results(request):
+    return render(request, 'faculty_results.html')
+
+def faculty_manage_student(request):
+    return render(request, 'faculty_manage_student.html')
+
+def faculty_list_student(request):
+    stu = student.objects.all()
+    context = {'students': stu}
+    return render(request, 'faculty_list_student.html', context)
