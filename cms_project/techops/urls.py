@@ -21,6 +21,7 @@ urlpatterns = [
     path('techops_profile', views.techops_profile),
     # Faculty URLs
     path('faculty_login_page', views.faculty_login_page),
+    path('faculty_login', views.faculty_login),
     path('faculty_add_student', views.faculty_add_student),
     path('add_student_submit', views.add_student_submit),
     # Admin Pages
