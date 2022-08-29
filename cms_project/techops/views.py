@@ -104,7 +104,7 @@ def add_student_submit(request):
         x.student_dob=request.POST.get('student_dob')
         x.student_password=request.POST.get('student_password')
         x.save()
-        return render(request,'dashboard.html')
+        return redirect('./faculty_list_student')
     except Exception as e:
         return HttpResponse(e)
 
