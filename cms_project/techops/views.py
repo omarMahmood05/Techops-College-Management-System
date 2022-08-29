@@ -165,9 +165,10 @@ def admin_faculty_edit(request, id):
 
 def faculty_edited(request,id):
         f = faculty.objects.get(id=id)
-        form=edited_form(request.POST, instance=f)
-        if form._is_valid():
-            form.save()
-            return redirect('../admin_list_faculty')
-        context = {'member': f}
-        return render(request, 'admin_faculty_edit.html', context)
+        f_form = edited_form(request.POST, instance = f)
+        try:
+            if f_form.is_valid():
+                f_form.save()
+                return redirect('../admin_list_faculty')
+        except Exception as e:
+            return HttpResponse("Some error")   

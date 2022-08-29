@@ -4,5 +4,5 @@ from techops.models import *
 
 class edited_form(forms.ModelForm):
     class Meta:
-        models =faculty
-        fields="__all__"
+        model = faculty
+        fields = "__all__"
