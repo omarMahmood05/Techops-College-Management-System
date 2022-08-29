@@ -8,10 +8,11 @@ urlpatterns = [
     path('techops_login_page_failed', views.techops_login_page_failed),
     path('student_log_out', views.student_log_out),
     path('authentication_error', views.authentication_error),
-    path('techops_forgot_password', views.techops_forgot_password),
-    path('reset_password', views.reset_password),
+        # Error Login 
     path('student_login', views.student_login),
+    # Signup Page
     path('techops_signup_page', views.techops_signup),
+    # Inner Contents - Student
     path('techops_dashboard', views.techops_dashboard),
     path('techops_results', views.techops_results),
     path('techops_feesPayment', views.techops_feesPayment),

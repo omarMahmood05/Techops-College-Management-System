@@ -14,11 +14,11 @@ def homepage(request):
 def techops_login(request):
     return render(request, 'techops_login_page.html')
 
-def techops_forgot_password(request):
-    return render(request, 'techops_forgot_password.html')
+# def techops_forgot_password(request):
+#     return render(request, 'techops_forgot_password.html')
 
-def reset_password(request):
-    return render(request, 'reset_password.html')
+# def reset_password(request):
+#     return render(request, 'reset_password.html')
 
 def authentication_error(request):
     return render(request, 'authentication_error.html')
@@ -42,6 +42,8 @@ def student_login(request):
          return render(request,'techops_login_page_failed.html')
 
 def techops_login_page_failed(request):
+    global student_authenticated
+    student_authenticated = False
     return render(request, 'techops_login_page_failed.html')
 
 
@@ -56,19 +58,33 @@ def techops_dashboard(request):
         
 
 def techops_results(request):
-    return render(request, 'techops_results.html')
+    if student_authenticated:
+        return render(request, 'techops_results.html')
+    else: 
+        return render(request, 'authentication_error.html')
+
 
 def techops_feesPayment(request):
-    return render(request, 'techops_feesPayment.html')
+    if student_authenticated:
+        return render(request, 'techops_feesPayment.html')
+    else: 
+        return render(request, 'authentication_error.html')
+    
 
 def techops_admit_card(request):
-    return render(request, 'techops_admit_card.html')
+    if student_authenticated:
+        return render(request, 'techops_admit_card.html')
+    else: 
+        return render(request, 'authentication_error.html')
 
 def faculty_login_page(request):
     return render(request, 'faculty_login_page.html')
 
 def techops_backlogs(request):
-    return render(request, 'techops_backlogs.html')
+    if student_authenticated:
+        return render(request, 'techops_backlogs.html')
+    else: 
+        return render(request, 'authentication_error.html')
 
 def techops_profile(request):
     return render(request, 'techops_profile.html')
