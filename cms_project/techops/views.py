@@ -172,3 +172,16 @@ def faculty_edited(request,id):
                 return redirect('../admin_list_faculty')
         except Exception as e:
             return HttpResponse(e)   
+
+def faculty_login(request):
+    faculty_email=request.POST.get('faculty_email')
+    faculty_password=request.POST.get('faculty_password')
+    try:
+        if faculty.objects.filter(faculty_email=faculty_email,faculty_password=faculty_password).exists():
+            global faculty_authenticated
+            faculty_authenticated = True
+            return render(request, 'dashboard.html')
+        else:
+            return render(request,'techops_login_page_failed.html')
+    except:
+         return render(request,'techops_login_page_failed.html')
