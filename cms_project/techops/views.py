@@ -249,14 +249,18 @@ def faculty_edited(request,id):
     f.save()
     return redirect('../admin_list_faculty')
 
-def add_results(request):
-    a=results()
+def add_results(request, id):
+    context = {'id': id}
+    return render(request, './student_result_submit.html', context)
+
+def student_add_results_submit(request):
+    x = results()
     try:
-        a.student_id=request.POST.get('student_id')
-        a.subject_name=request.POST.get('subject_name')
-        a.subject_marks=request.POST.get('subject_marks')
-        a.subject_grade=request.POST.get('subject_grade')
-        a.save()
-        return redirect('../faculty_list_student')
+        x.student_id = request.POST.get('student_id')
+        x.subject_name = request.POST.get('subject_name')
+        x.subject_grade = request.POST.get('subject_grade')
+        x.subject_marks = request.POST.get('subject_marks')
+        x.save()
+        return redirect('./faculty_list_student')
     except Exception as e:
         return HttpResponse(e)
