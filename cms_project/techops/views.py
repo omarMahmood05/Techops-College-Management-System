@@ -165,13 +165,19 @@ def admin_faculty_edit(request, id):
 
 def faculty_edited(request,id):
         f = faculty.objects.get(id=id)
-        f_form = edited_form(request.POST, instance = f)
-        try:
-            if f_form.is_valid():
-                f_form.save()
-                return redirect('../admin_list_faculty')
-        except Exception as e:
-            return HttpResponse(e)   
+        newStatus = request.POST.get('faculty_status')
+        newPassword = request.POST.get('faculty_password')
+        f.faculty_status = newStatus
+        f.faculty_password = newPassword
+        f.save()
+        return redirect('../admin_list_faculty')
+
+        # f_form = edited_form(request.POST, instance = f)
+        # try:
+        #     f_form.save()
+        #     return redirect('../admin_list_faculty')        
+        # except Exception as e:
+        #     return HttpResponse(e)   
 
 def faculty_login(request):
     faculty_email=request.POST.get('faculty_email')
