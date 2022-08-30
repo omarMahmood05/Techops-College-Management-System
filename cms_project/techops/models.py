@@ -16,3 +16,9 @@ class faculty(models.Model):
     faculty_email=models.EmailField(max_length=50)
     faculty_status=models.CharField(max_length=50)
     faculty_password=models.CharField(max_length=50)
+    
+class results(models.Model):
+    student_id=models.IntegerField()
+    subject_name=models.CharField(max_length=50)
+    subject_grade=models.CharField(max_length=50)
+    subject_marks=models.IntegerField()
