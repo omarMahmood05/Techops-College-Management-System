@@ -5,6 +5,7 @@ from techops.forms import *
 # Create your views here.
 
 student_authenticated = False
+userName = ''
 faculty_authenticated = False
 admin_authenticated = False
 
@@ -27,7 +28,7 @@ def authentication_error(request):
 def student_log_out(request):
     global student_authenticated
     student_authenticated = False
-    return render(request, 'techops_login_page.html')
+    return render(request, 'homepage.html')
 
 def student_login(request):
     student_email=request.POST.get('student_email')
@@ -36,11 +37,17 @@ def student_login(request):
         if student.objects.filter(student_email=student_email,student_password=student_password).exists():
             global student_authenticated
             student_authenticated = True
-            return render(request, 'dashboard.html')
+            stu = student.objects.get(student_email = student_email)
+            context = {'user': stu}
+            global userName
+            userName = student_email
+            return render(request, 'dashboard.html', context)
         else:
             return render(request,'techops_login_page_failed.html')
     except:
          return render(request,'techops_login_page_failed.html')
+
+
 
 def techops_login_page_failed(request):
     global student_authenticated
@@ -53,28 +60,40 @@ def techops_signup(request):
 
 def techops_dashboard(request):
     if student_authenticated:
-        return render(request, 'dashboard.html')
+        student_email = userName
+        stu = student.objects.get(student_email = student_email)
+        context = {'user': stu}
+        return render(request, 'dashboard.html', context)
     else: 
         return render(request, 'authentication_error.html')
         
 
 def techops_results(request):
     if student_authenticated:
-        return render(request, 'techops_results.html')
+        student_email = userName
+        stu = student.objects.get(student_email = student_email)
+        context = {'user': stu}
+        return render(request, 'techops_results.html', context)
     else: 
         return render(request, 'authentication_error.html')
 
 
 def techops_feesPayment(request):
     if student_authenticated:
-        return render(request, 'techops_feesPayment.html')
+        student_email = userName
+        stu = student.objects.get(student_email = student_email)
+        context = {'user': stu}
+        return render(request, 'techops_feesPayment.html', context)
     else: 
         return render(request, 'authentication_error.html')
     
 
 def techops_admit_card(request):
     if student_authenticated:
-        return render(request, 'techops_admit_card.html')
+        student_email = userName
+        stu = student.objects.get(student_email = student_email)
+        context = {'user': stu}
+        return render(request, 'techops_admit_card.html', context)
     else: 
         return render(request, 'authentication_error.html')
 
@@ -83,7 +102,10 @@ def faculty_login_page(request):
 
 def techops_backlogs(request):
     if student_authenticated:
-        return render(request, 'techops_backlogs.html')
+        student_email = userName
+        stu = student.objects.get(student_email = student_email)
+        context = {'user': stu}
+        return render(request, 'techops_backlogs.html', context)
     else: 
         return render(request, 'authentication_error.html')
 
