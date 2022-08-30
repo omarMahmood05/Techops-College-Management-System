@@ -112,8 +112,8 @@ def admin_login_page(request):
     return render(request, 'admin_login_page.html')
 
 def admin_login(request):
-    admin_email_c = "fahadomar@fahadomar.com"
-    admin_pass_c = "fahadomar@fahadomar.com"
+    admin_email_c = "admin@techops.com"
+    admin_pass_c = "admin"
     admin_email = request.POST.get('admin_email')
     admin_pass = request.POST.get('admin_password')
     try:
@@ -163,15 +163,6 @@ def admin_faculty_edit(request, id):
     context = {'member': f}
     return render(request, 'admin_faculty_edit.html', context)
 
-def faculty_edited(request,id):
-        f = faculty.objects.get(id=id)
-        newStatus = request.POST.get('faculty_status')
-        newPassword = request.POST.get('faculty_password')
-        f.faculty_status = newStatus
-        f.faculty_password = newPassword
-        f.save()
-        return redirect('../admin_list_faculty')
-
         # f_form = edited_form(request.POST, instance = f)
         # try:
         #     f_form.save()
@@ -205,7 +196,33 @@ def faculty_list_student(request):
 
 
 def faculty_student_delete(request,id):
-    f = faculty.objects.get(id=id)
-    f.delete()
+    stu = student.objects.get(id=id)
+    stu.delete()
     return redirect('../faculty_list_student')
-    
+
+def faculty_student_edit(request, id):
+    stu = student.objects.get(id = id)
+    context = {'student': stu}
+    return render(request, 'faculty_student_edit.html', context)
+
+def student_edited(request, id):
+    stu = student.objects.get(id = id)
+    newFatherName = request.POST.get('father_name')
+    newMotherName = request.POST.get('mother_name')
+    newPassword = request.POST.get('student_password')
+    newPhoneNumber = request.POST.get('student_phno')
+    stu.student_fathername = newFatherName
+    stu.student_mothername = newMotherName
+    stu.student_password = newPassword
+    stu.student_phoneno = newPhoneNumber
+    stu.save()
+    return redirect('../faculty_list_student')
+
+def faculty_edited(request,id):
+    f = faculty.objects.get(id=id)
+    newStatus = request.POST.get('faculty_status')
+    newPassword = request.POST.get('faculty_password')
+    f.faculty_status = newStatus
+    f.faculty_password = newPassword
+    f.save()
+    return redirect('../admin_list_faculty')
