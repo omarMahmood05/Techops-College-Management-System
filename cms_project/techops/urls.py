@@ -30,6 +30,7 @@ urlpatterns = [
     path('student_delete/<int:id>', views.faculty_student_delete),
     path('faculty_student_edit/<int:id>', views.faculty_student_edit),
     path('student_edited/<int:id>', views.student_edited),
+    path('add_result/<int:id>',views.add_results),
     # Admin Pages
     path('admin_login_page', views.admin_login_page),
     path('admin_login', views.admin_login),
