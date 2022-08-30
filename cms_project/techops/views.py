@@ -72,7 +72,8 @@ def techops_results(request):
     if student_authenticated:
         student_email = userName
         stu = student.objects.get(student_email = student_email)
-        context = {'user': stu}
+        result = results.objects.all()
+        context = {'user': stu, 'result' : result}
         return render(request, 'techops_results.html', context)
     else: 
         return render(request, 'authentication_error.html')
