@@ -32,11 +32,13 @@ def student_log_out(request):
 def student_login(request):
     student_email=request.POST.get('student_email')
     student_password=request.POST.get('student_password')
+    stu = student.objects.get(student_email = student_email)
+    context = {'user': stu}
     try:
         if student.objects.filter(student_email=student_email,student_password=student_password).exists():
             global student_authenticated
             student_authenticated = True
-            return render(request, 'dashboard.html')
+            return render(request, 'dashboard.html', context)
         else:
             return render(request,'techops_login_page_failed.html')
     except:
