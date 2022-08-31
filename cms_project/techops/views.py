@@ -16,20 +16,6 @@ def homepage(request):
 def techops_login(request):
     return render(request, 'techops_login_page.html')
 
-# def techops_forgot_password(request):
-#     return render(request, 'techops_forgot_password.html')
-
-# def reset_password(request):
-#     return render(request, 'reset_password.html')
-
-def authentication_error(request):
-    return render(request, 'authentication_error.html')
-
-def student_log_out(request):
-    global student_authenticated
-    student_authenticated = False
-    return render(request, 'homepage.html')
-
 def student_login(request):
     student_email=request.POST.get('student_email')
     student_password=request.POST.get('student_password')
@@ -47,17 +33,26 @@ def student_login(request):
     except:
          return render(request,'techops_login_page_failed.html')
 
+def student_log_out(request):
+    global student_authenticated
+    student_authenticated = False
+    userName = ''
+    faculty_authenticated = False
+    admin_authenticated = False
+    return render(request, 'homepage.html')
 
+def authentication_error(request):
+    return render(request, 'authentication_error.html')
 
 def techops_login_page_failed(request):
     global student_authenticated
     student_authenticated = False
     return render(request, 'techops_login_page_failed.html')
 
-
 def techops_signup(request):
     return render(request, 'techops_signup_page.html')
 
+# STUDENT PAGES
 def techops_dashboard(request):
     if student_authenticated:
         student_email = userName
@@ -66,7 +61,6 @@ def techops_dashboard(request):
         return render(request, 'dashboard.html', context)
     else: 
         return render(request, 'authentication_error.html')
-        
 
 def techops_results(request):
     if student_authenticated:
@@ -78,7 +72,6 @@ def techops_results(request):
     else: 
         return render(request, 'authentication_error.html')
 
-
 def techops_feesPayment(request):
     if student_authenticated:
         student_email = userName
@@ -88,7 +81,6 @@ def techops_feesPayment(request):
     else: 
         return render(request, 'authentication_error.html')
     
-
 def techops_admit_card(request):
     if student_authenticated:
         student_email = userName
@@ -97,9 +89,6 @@ def techops_admit_card(request):
         return render(request, 'techops_admit_card.html', context)
     else: 
         return render(request, 'authentication_error.html')
-
-def faculty_login_page(request):
-    return render(request, 'faculty_login_page.html')
 
 def techops_backlogs(request):
     if student_authenticated:
@@ -112,6 +101,11 @@ def techops_backlogs(request):
 
 def techops_profile(request):
     return render(request, 'techops_profile.html')
+
+# Faculty Pages
+
+def faculty_login_page(request):
+    return render(request, 'faculty_login_page.html')
 
 def faculty_add_student(request):
     return render(request, 'faculty_add_student.html')
@@ -265,3 +259,8 @@ def student_add_results_submit(request):
         return redirect('./faculty_list_student')
     except Exception as e:
         return HttpResponse(e)
+
+def faculty_student_results(reqeust):
+    res = results.objects.all()
+    context = {'result': res}
+    return render(reqeust, 'faculty_student_results.html', context)

@@ -32,6 +32,7 @@ urlpatterns = [
     path('student_edited/<int:id>', views.student_edited),
     path('add_result/<int:id>',views.add_results),
     path('student_add_results_submit',views.student_add_results_submit),
+    path('faculty_student_results',views.faculty_student_results),
     # Admin Pages
     path('admin_login_page', views.admin_login_page),
     path('admin_login', views.admin_login),
