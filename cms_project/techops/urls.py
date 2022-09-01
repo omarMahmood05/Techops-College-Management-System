@@ -43,6 +43,7 @@ urlpatterns = [
     path('faculty_member_delete/<int:id>', views.faculty_member_delete),
     path('admin_faculty_edit/<int:id>', views.admin_faculty_edit),
     path('faculty_edited/<int:id>', views.faculty_edited),
+    path('admin_dashboard', views.admin_dashboard),
     # Testing
 
 ]

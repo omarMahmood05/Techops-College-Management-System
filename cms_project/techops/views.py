@@ -11,6 +11,9 @@ admin_authenticated = False
 
 def homepage(request):
     student_authenticated = False
+    faculty_authenticated = False
+    admin_authenticated = False
+
     return render(request, 'homepage.html')
 
 def techops_login(request):
@@ -264,3 +267,6 @@ def faculty_student_results(reqeust):
     res = results.objects.all()
     context = {'result': res}
     return render(reqeust, 'faculty_student_results.html', context)
+
+def admin_dashboard(request):
+    return render(request, 'admin_dashboard.html')
