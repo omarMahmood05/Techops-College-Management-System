@@ -20,8 +20,10 @@ This project has a 3-level hierarchical login for Admin, Faculty, and Student.
 
 To login as an admin, click on the top left hyperlink *Admin* and it will redirect you to an Admin login page.
 The ID and Password are:
-Email Id: admin@techops.com
+
+Email Id: admin@techops.com <br>
 Password: admin
+
 You'll be greeted by an **Admin Dashboard** page
 
 ### Admin Dashboard
@@ -38,9 +40,10 @@ You can Add, Delete and List all the faculty members. You can also edit the deta
 To login as a faculty member, click on the button *Faculty Login* and it will redirect you to a faculty member login page. 
 You can login using the credentials that you created in the Admin page or you can use a default one
 
-The default ID and Password are:
-Email Id: omar@techops.com
-Password: omar12
+The default ID and Password are: <br>
+Email Id: omar@techops.com <br>
+Password: omar12 <br>
+
 You'll be greeted with a **Faculty Dashboard** page
 
 ### Faculty Dashboard
@@ -48,3 +51,25 @@ You'll be greeted with a **Faculty Dashboard** page
 
 ### Actions that can be performed by the faculty members
 As a faculty member you can manage the students and their results. 
+Faculty members can Add, Delete, Edit and Create results for students.
+
+### Manage Students Page
+![Techops Manage Studnet](https://drive.google.com/uc?export=view&id=120_kzGpaI5gmtJW8E5oXhMI2bStfNceD)
+
+## Students
+To login as a student, click on the *Student Login* button on the homepage.
+You can login using the credentials that you created through the faculty member or you can use a default id.
+
+Email ID: omarStudent@techops.com <br>
+Password: omarStudent <br>
+
+You will be greeted with a *Student Dashboard*
+
+### Student Dashboard
+![image](https://drive.google.com/uc?export=view&id=11eRlZ6MQ0w6etCYpfp5HQTl4LPQsDmDN)
+
+### What can the student do
+The student can view their own results. 
+
+We also wanted to expand and work on the Fees Payment, Admit Card and Backlogs sections but out teacher said this is all we need. 🤠
+
