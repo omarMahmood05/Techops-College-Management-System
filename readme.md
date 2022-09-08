@@ -1,6 +1,6 @@
 # Welcome to Techops CMS!
 
-Hey there! Welcome to **Techops CMS**. CMS Stands for College Management System. This was a colaboration and a minor project between students of a few colleges.
+Hey there! Welcome to **Techops CMS**. CMS stands for College Management System. This was a collaboration and a minor project between students from a few colleges.
 
 Group Members:
 
@@ -11,6 +11,17 @@ Group Members:
 
 # What Can Be Done Using This Project
 This project has a 3-level hierarchical login for Admin, Faculty, and Student.
+
+# How to start this application
+**To start the application, make sure you have Python and Django installed on your computer.**
+
+There are two ways to install this application on your local machine: through Git and GitHub
+
+If you don't have Git installed on your PC, just click on the button labeled as ***Code*** on the top and click download as zip. After downloading, extract the file and click on ***Start App***. This will open a command prompt terminal and a chrome browser with localhost running and start the server.
+
+If you have Git installed type `git clone https://github.com/omarMahmood05/Techops-College-Management-System.git`
+
+And after the project is cloned, open ***Start App***. This will open a command prompt terminal and a chrome browser with localhost running and start the server.
 
 # Homepage
 
@@ -30,7 +41,7 @@ You'll be greeted by an **Admin Dashboard** page
 ![Techops Admin Dashboard](https://drive.google.com/uc?export=view&id=12QEIQyDpzA5labeBZm06y1v_8xg45gsc)
 
 ### Actions that can be performed by the admin
-As an admin you can manage all the faculty members. 
+As an admin, you can manage all the faculty members. 
 You can Add, Delete and List all the faculty members. You can also edit the details of the faculty members.
 
 ### Manage Faculty Page
@@ -72,4 +83,3 @@ You will be greeted with a *Student Dashboard*
 The student can view their own results. 
 
 We also wanted to expand and work on the Fees Payment, Admit Card and Backlogs sections but out teacher said this is all we need. 🤠
-
