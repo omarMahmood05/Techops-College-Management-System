@@ -4,7 +4,7 @@ Hey there! Welcome to **Techops CMS**. CMS stands for College Management System.
 
 Group Members:
 
- 1. Omar Mahmood
+ 1. Omar Mahmood (Team Lead)
  2. MD Fahad
  3. Sruti Das; and
  4. Varun Fatepuria 
